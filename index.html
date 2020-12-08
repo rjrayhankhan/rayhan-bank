@@ -80,7 +80,7 @@
 
                     UpdateSpanText('currentDeposit', depositNumber);
                     UpdateSpanText('currentBalance', depositNumber);
-                    // UpdateSpanText('currentWithdraw', depositNumber);
+                    
 
                     document.getElementById("depositAmount").value = "";
       })
@@ -88,7 +88,10 @@
                 const withdrawBtn = document.getElementById('addWithdraw');
                 withdrawBtn.addEventListener('click', function(){
                     const withdrawNumber = getInputNumber("withdrawAmount")
-                    console.log(withdrawNumber);
+                    UpdateSpanText('currentWithdraw', withdrawNumber);
+                    UpdateSpanText('currentBalance', -1 * withdrawNumber);
+
+                    document.getElementById("withdrawAmount").value = "";
                 })
                  function getInputNumber(id){
                     const amount = document.getElementById(id).value;
